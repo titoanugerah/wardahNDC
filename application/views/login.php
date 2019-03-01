@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('./assets/template/uikit'); ?>/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url('./assets/image/undip-original.png'); ?>">
+  <link rel="icon" type="image/png" href="<?php echo base_url('./assets/logo/wardah.png'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>SIPMA FT | Login </title>
+  <title>Wardah | Login </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Sistem Informasi Penjamin Mutu Fakultas Teknik Universitas Diponegoro" data-placement="bottom" target="_blank">SIPMA Fakultas Teknik</a>
+        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Sistem Informasi Penjamin Mutu Fakultas Teknik Universitas Diponegoro" data-placement="bottom" target="_blank">Warehouse Wardah</a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
           <span class="navbar-toggler-bar middle-bar"></span>
@@ -38,8 +38,6 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?php echo base_url('./assets/template/uikit/'); ?>assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="http://ft.undip.ac.id">Website Fakultas Teknik UNDIP</a></li>
-          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('aboutUt'); ?>">Tentang Kami</a></li>
         </ul>
       </div>
     </div>
@@ -54,7 +52,7 @@
             <form class="form" method="post">
               <div class="card-header text-center">
                 <div class="logo-container">
-                  <img src="<?php echo base_url('./assets/image/undip-light.png'); ?>" alt="">
+                  <img src="<?php echo base_url('./assets/logo/wardah.png'); ?>" alt="" style="">
                 </div>
               </div>
               <div class="card-body">
@@ -103,8 +101,8 @@
             <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>,
-          <a href="https://ft.undip.ac.id" target="_blank">Fakultas Teknik</a>. dan
-          <a target="_blank">Tito Anugerah</a>.
+          <a href="https://ft.undip.ac.id" target="_blank">Wardah</a>. dan
+          <a target="_blank">Artwork</a>.
         </div>
       </div>
     </footer>
