@@ -9,3 +9,4 @@ $route['translate_uri_dashes'] = FALSE;
 #ACCOUNT AREA
 $route['login'] = 'account/login';
 $route['logout'] = 'account/logout';
+$route['forgotPassword'] = 'account/forgotPassword';

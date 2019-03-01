@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('./assets/template/uikit'); ?>/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url('./assets/logo/wardah.png'); ?>">
+  <link rel="icon" type="image/png" href="<?php echo base_url('./assets/image/undip-original.png'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Wardah | Login </title>
+  <title>Wardah | Forgot Password</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Wardah Warehouse Information System " data-placement="bottom" target="_blank">Warehouse Wardah</a>
+        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Wardah" data-placement="bottom" target="_blank">Wardah</a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
           <span class="navbar-toggler-bar middle-bar"></span>
@@ -52,7 +52,7 @@
             <form class="form" method="post">
               <div class="card-header text-center">
                 <div class="logo-container">
-                  <img src="<?php echo base_url('./assets/logo/wardah.png'); ?>" alt="" style="">
+                  <img src="<?php echo base_url('./assets/logo/wardah.png'); ?>" alt="">
                 </div>
               </div>
               <div class="card-body">
@@ -63,15 +63,7 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" name="username" placeholder="Username" required>
-                </div>
-                <div class="input-group no-border input-lg">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
-                    </span>
-                  </div>
-                  <input type="password" placeholder="Password" name="password" class="form-control" required>
+                  <input type="text" class="form-control" name="username" placeholder="Masukan username akun anda" required>
                 </div>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
@@ -83,9 +75,9 @@
                 </div>
               </div>
               <div class="card-footer text-center">
-                <button type="submit" name="loginValidation" value="loginValidation" class="btn btn-primary btn-round btn-lg btn-block">Login</button>
+                <button type="submit" name="resetPassword" value="resetPassword" class="btn btn-primary btn-round btn-lg btn-block">Reset Password</button>
                 <div class="pull-right">
-                  <h6><a href="<?php echo base_url('forgotPassword'); ?>" class="link">Lupa Password?</a></h6>
+                  <h6><a href="<?php echo base_url('login'); ?>" class="link">Kembali Ke Login</a></h6>
                 </div>
 
             </form>

@@ -39,6 +39,26 @@ class Account_model extends CI_model{
      return $account;
   }
 
+  public function findAccountByUsername()
+  {
+    $where = array('username' => $this->input->post('username'));
+    $query = $this->db->get_where('account', $where);
+    $account['status'] = $query->num_rows();
+    $this->resetPassword($query->row('id'));
+  }
+
+  public function resetPassword($id)
+  {
+    $newPassword = rand(1001, 9999);
+    $data = array(
+      'password' => md5($newPassword),
+      'other_info' => $newPassword,
+    );
+    $where = array('id' => $id);
+    $this->db->where($where);
+    $this->db->update('account', $data);
+  }
+
 }
 
  ?>

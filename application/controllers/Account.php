@@ -33,9 +33,23 @@ class Account extends CI_Controller{
     redirect(base_url('login'));
   }
 
-  public function dashboard()
+  public function forgotPassword()
   {
-    
+    $data['notification'] = 'no';
+    if ($this->input->post('resetPassword')) {
+      $account = $this->account_model->findAccountByUsername();
+      if($login['status']==1 && ($this->input->post('captcha')==$this->session->userdata('result'))){
+        $data['notification'] = 'resetPasswordSuccess';
+      } elseif($login['status']==1){
+        $data['notification'] = 'captchaWrong';
+      } else {
+        $data['notification'] = 'usernameWrong';
+      }
+
+    }
+    $captcha = $this->account_model->createCaptcha();
+    $this->session->set_userdata($captcha);
+    $this->load->view('forgotPassword', $data);
   }
 
 }
