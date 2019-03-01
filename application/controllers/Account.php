@@ -10,7 +10,8 @@ class Account extends CI_Controller{
 
   public function login()
   {
-    
+    $data['notification'] = 'no';
+    $this->load->view('login', $data);
   }
 
 }
