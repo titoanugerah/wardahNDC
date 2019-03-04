@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="button-container">
-            <button type="submit" name="updateProfile" value="updateProfile" class="btn btn-primary">Simpan Data</button>
+            <button type="submit" name="updateAccount" value="updateAccount" class="btn btn-primary">Simpan Data</button>
           </div>
         </form>
       </div>
@@ -69,35 +69,35 @@
   </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form  method="post" enctype="multipart/form-data">
     <div class="modal-content">
-      <div class="modal-header justify-content-center">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          <i class="fa fa-image"></i>
-        </button>
-        <center>
-          <h4 class="title title-up">Ubah Foto Profil</h4>
-        </center>
-      </div>
-      <div class="modal-body">
-        <p>Silahkan upload foto dengan dimensi maksimal 500 x 500</p>
-        <div class="md-form">
-            <div class="file-field">
-                <div class="btn btn-primary btn-sm float-left">
-                    <span>Choose file</span>
-                    <input type="file">
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload your file">
-                </div>
-            </div>
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-default">Upload</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
+
+        <div class="modal-body">
+          <p>Silahkan upload bukti foto dengan format jpg</p>
+          <div class="md-form">
+            <div class="file-field">
+              <div class="btn btn-primary btn-sm float-left">
+                <span>Choose file</span>
+                <input type="file" name="image_address">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer modal-danger">
+          <button type="submit" class="btn btn-warning" name="uploadFile" value="uploadFile">Upload</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
       </div>
     </div>
+  </form>
   </div>
 </div>

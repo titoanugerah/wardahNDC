@@ -62,9 +62,22 @@ class Account extends CI_Controller{
 
   public function profile()
   {
+    $data['notification'] = 'no';
+    if ($this->input->post('updateAccount')) {
+      $update = $this->account_model->updateAccount();
+      if ($update['status']==1) {
+        $this->session->set_userdata($update['session']);
+        $data['notification'] = 'updateSuccess';
+      } else {
+        $data['notification'] = 'updateError';
+      }
+    } elseif ($this->input->post('uploadFile')) {
+      $data['upload'] = $this->account_model->uploadPicture();
+      $data['notification'] = 'uploadStatus'.$data['upload']['status'];
+      $this->session->set_userdata($data['upload']['session']);
+    }
     $data['title'] = 'Profil';
     $data['view_name'] = 'profile';
-    $data['notification'] = 'no';
     $this->load->view('template', $data);
 
   }
