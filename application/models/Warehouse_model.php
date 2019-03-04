@@ -31,6 +31,7 @@ class Warehouse_model extends CI_model{
       'id_item' => $id_item,
       'qty_in' => $qty_in,
       'id_pic' => $this->session->userdata['id'],
+      'information' => 'Barang masuk ke gudang '
      );
 
      $this->db->insert('update_stock', $data);

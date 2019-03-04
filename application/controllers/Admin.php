@@ -83,8 +83,8 @@ class Admin extends CI_Controller{
       $data['notification'] = 'updateItemSuccess';
       $this->admin_model->updateItem($id);
     }
-#    $data['stock'] = $this->admin_model->getDataRow($id, 'stock')
-    $data['detail'] = $this->admin_model->getDataRow($id,'item');
+    $data['stock'] = $this->admin_model->getSomeData('id_item',$id,'view_stock');
+    $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
     $data['title'] = 'Detail Item '.$data['detail']->item;
     $data['view_name'] = 'detailItem';
     $this->load->view('template', $data);

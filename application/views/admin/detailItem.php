@@ -56,8 +56,31 @@
                 </div>
               </div>
               <div class="tab-pane" id="itemHistory">
-                <p> sedang dalam tahap development </p>
-              </div>
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Tanggal</th>
+                        <th class="text-center">In</th>
+                        <th class="text-center">Out</th>
+                        <th class="text-center">PIC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $i = 1; foreach ($stock as $item): ?>
+                        <tr>
+                          <td class="text-center"><?php echo $i ?></td>
+                          <td class="text-center"><?php echo $item->update_date; ?></td>
+                          <td class="text-center"><?php echo $item->qty_in; ?></td>
+                          <td class="text-center"><?php echo $item->qty_out; ?></td>
+                          <td class="text-center"><?php echo $item->pic; ?></td>
+                          <?php $i++; endforeach; ?>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
             </div>
           </div>
         </div>

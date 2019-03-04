@@ -76,10 +76,32 @@ class Admin_model extends CI_model{
     $data = array(
       'item' => $this->input->post('item'),
       'stock' => $this->input->post('stock'),
-      'id_warehouse' => $this->session->userdata['id'],
+      'id_pic' => $this->session->userdata['id'],
      );
+
      $this->db->insert('item', $data);
+     $this->updateStockItem($this->db->insert_id(), $this->input->post('stock'));
   }
+
+  public function updateStockItem($id_item, $qty_in)
+  {
+    $data = array(
+      'id_item' => $id_item,
+      'qty_in' => $qty_in,
+      'id_pic' => $this->session->userdata['id'],
+      'information' => 'Barang masuk ke gudang '
+     );
+
+     $this->db->insert('update_stock', $data);
+  }
+
+  public function getSomeData($row, $id, $table)
+  {
+    $where = array($row => $id);
+    $query = $this->db->get_where($table, $where);
+    return $query->result();
+  }
+
 
   public function deleteItem($id)
   {
