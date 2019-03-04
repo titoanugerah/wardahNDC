@@ -38,9 +38,9 @@ class Account extends CI_Controller{
     $data['notification'] = 'no';
     if ($this->input->post('resetPassword')) {
       $account = $this->account_model->findAccountByUsername();
-      if($login['status']==1 && ($this->input->post('captcha')==$this->session->userdata('result'))){
+      if($account['status']==1 && ($this->input->post('captcha')==$this->session->userdata('result'))){
         $data['notification'] = 'resetPasswordSuccess';
-      } elseif($login['status']==1){
+      } elseif($account['status']==1){
         $data['notification'] = 'captchaWrong';
       } else {
         $data['notification'] = 'usernameWrong';
