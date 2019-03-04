@@ -17,8 +17,8 @@
   </a>
 </li>
 <li class="nav-item active">
-  <a class="nav-link" href=" <?php echo base_url('createQuestionnaire'); ?> ">
+  <a class="nav-link" href=" <?php echo base_url('itemList'); ?> ">
     <i class="material-icons">note_add</i>
-    <p>Buat Kuesioner</p>
+    <p>List Stok Barang</p>
   </a>
 </li>

@@ -58,12 +58,11 @@ class Admin extends CI_Controller{
 
   public function itemList()
   {
-    $data['config'] = $this->admin_model->getDataRow(1,'webConf');
-    $data['title'] = 'Konfigurasi Website';
-    $data['view_name'] = 'webConf';
+    $data['list'] = $this->admin_model->getAllData('item');
+    $data['title'] = 'Stok Item';
+    $data['view_name'] = 'itemList';
     $data['notification'] = 'no';
     $this->load->view('template', $data);
-
   }
 }
  ?>
