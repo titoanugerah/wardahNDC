@@ -68,7 +68,17 @@ class admin_model extends CI_model{
       'email' => $this->input->post('email')
     );
     $this->db->where($where);
-    $this->db->update('account', $data);  
+    $this->db->update('account', $data);
+  }
+
+  public function createItem()
+  {
+    $data = array(
+      'item' => $this->input->post('item'),
+      'stock' => $this->input->post('stock'),
+      'id_warehouse' => $this->session->userdata['id'],
+     );
+     $this->db->insert('item', $data);
   }
 }
  ?>

@@ -8,15 +8,15 @@
             <div class="nav-tabs-wrapper">
               <ul class="nav nav-tabs" data-tabs="tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#account" data-toggle="tab">
-                    <i class="material-icons">assignment_ind</i>
-                    Akun Pengguna
+                  <a class="nav-link active" href="#itemList" data-toggle="tab">
+                    <i class="material-icons">library_books</i>
+                    Item
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#createAccount" data-toggle="tab">
-                    <i class="material-icons">record_voice_over</i>
-                    Buat Akun
+                  <a class="nav-link" href="#createItem" data-toggle="tab">
+                    <i class="material-icons">library_add</i>
+                    Buat Item Baru
                   </a>
                 </li>
               </ul>
@@ -25,7 +25,7 @@
         </div>
         <div class="card-body ">
           <div class="tab-content text-justify">
-            <div class="tab-pane active" id="account">
+            <div class="tab-pane active" id="itemList">
               <div class="card-body">
                 <table class="table">
                   <thead>
@@ -46,9 +46,9 @@
                           <center>
                             <a href="<?php echo base_url('detailItem/'.$item->id); ?>">
                               <button type="button" rel="tooltip" class="btn btn-info">
-                                <i class="material-icons">person</i>
+                                <i class="material-icons">description</i>
                               </button>
-                            </a>                            
+                            </a>
                           </center>
                         </td>
                         <?php $i++; endforeach; ?>
@@ -57,102 +57,28 @@
                   </table>
                 </div>
               </div>
-              <div class="tab-pane" id="createAccount">
+              <div class="tab-pane" id="createItem">
                 <div class="card-body">
                   <form method="post">
 
                     <div class="row">
                       <div class="col-md-6 pr-1">
                         <div class="form-group">
-                          <label>Username</label>
-                          <input type="text" name="username" class="form-control" placeholder="Masukan username" value="" required>
+                          <label>Nama Item</label>
+                          <input type="text" name="item" class="form-control" placeholder="Masukan nama item" value="" required>
                         </div>
                       </div>
                       <div class="col-md-6 pl-1">
                         <div class="form-group">
-                          <label>Email</label>
-                          <input type="email" name="email" class="form-control" placeholder="Masukan email pengguna" value="" required>
+                          <label>Stok Awal</label>
+                          <input type="number" name="stock" class="form-control" placeholder="Masukan stok awal" value="" required>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <span>Jenis Akun</span>
-                          <div class="row">
-                            <div class="col-md-3">
 
-                              <div class="form-check form-check-radio">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="role" value="admin">
-                                  Admin
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
 
-                            <div class="col-md-3">
-
-                              <div class="form-check form-check-radio">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="role" value="dc">
-                                  Distribution Center
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-
-                            <div class="col-md-3">
-
-                              <div class="form-check form-check-radio">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="role" value="warehouse">
-                                  Warehouse
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-
-                            <div class="col-md-3">
-
-                              <div class="form-check form-check-radio">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="role" value="packing">
-                                  Packing
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 pr-1">
-                        <div class="form-group">
-                          <label>Nama Lengkap</label>
-                          <input type="text" name="fullname" class="form-control" placeholder="Masukan nama lengkap pengguna" value="" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6 pl-1">
-                        <div class="form-group">
-                          <label>Nomor Telepon</label>
-                          <input type="text" name="phone" class="form-control" placeholder="Masukan nomor telepon pengguna" value="" required>
-                        </div>
-                      </div>
-                    </div>
                     <div class="button-container">
-                      <button type="submit" name="createAccount" value="createAccount" class="btn btn-primary">Simpan Data</button>
+                      <button type="submit" name="createItem" value="createItem" class="btn btn-primary">Tambah Item</button>
                     </div>
                   </form>
                 </div>

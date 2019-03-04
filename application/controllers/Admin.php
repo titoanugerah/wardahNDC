@@ -58,6 +58,9 @@ class Admin extends CI_Controller{
 
   public function itemList()
   {
+    if ($this->input->post('createItem')) {
+      $this->admin_model->createItem();
+    }
     $data['list'] = $this->admin_model->getAllData('item');
     $data['title'] = 'Stok Item';
     $data['view_name'] = 'itemList';
