@@ -54,9 +54,9 @@ class Account extends CI_Controller{
 
   public function dashboard()
   {
-    $data['title'] = 'no';
+    $data['title'] = 'Dashboard';
     $data['view_name'] = 'no';
-    $data['notification'] = 'no';
+    $data['notification'] = 'loginSuccess';
     $this->load->view('template', $data);
   }
 
