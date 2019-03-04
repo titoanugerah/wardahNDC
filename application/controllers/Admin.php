@@ -35,7 +35,7 @@ class Admin extends CI_Controller{
     if ($this->input->post('updateEmail')) {
       $this->admin_model->updateEmail();
     }
-    $data['config'] = $this->admin_model->getDataRow(1,'webConf');
+    $data['config'] = $this->admin_model->getDataRow(1,'webconf');
     $data['title'] = 'Konfigurasi Website';
     $data['view_name'] = 'webConf';
     $data['notification'] = 'no';
