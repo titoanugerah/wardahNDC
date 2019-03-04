@@ -19,3 +19,4 @@ $route['account'] = 'admin/account';
 $route['detailAccount/(:any)'] = 'admin/detailAccount/$1';
 $route['deleteAccount/(:any)'] = 'admin/deleteAccount/$1';
 $route['itemList'] = 'admin/itemList';
+$route['detailItem/(:any)'] = 'admin/detailItem/$1';

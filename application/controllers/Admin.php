@@ -60,12 +60,34 @@ class Admin extends CI_Controller{
   {
     if ($this->input->post('createItem')) {
       $this->admin_model->createItem();
+      redirect(base_url('itemList'));
     }
     $data['list'] = $this->admin_model->getAllData('item');
     $data['title'] = 'Stok Item';
     $data['view_name'] = 'itemList';
     $data['notification'] = 'no';
     $this->load->view('template', $data);
+  }
+
+  public function detailItem($id)
+  {
+    $data['notification'] = 'no';
+    if ($this->input->post('deleteItem')) {
+      if (md5($this->input->post('password'))==$this->session->userdata['password']) {
+        $this->admin_model->deleteItem($id);
+        redirect(base_url('itemList'));
+      } else {
+        $data['notification'] = 'wrongPassword';
+      }
+    } elseif ($this->input->post('updateItem')) {
+      $data['notification'] = 'updateItemSuccess';
+      $this->admin_model->updateItem($id);
+    }
+    $data['detail'] = $this->admin_model->getDataRow($id,'item');
+    $data['title'] = 'Detail Item '.$data['detail']->item;
+    $data['view_name'] = 'detailItem';
+    $this->load->view('template', $data);
+
   }
 }
  ?>

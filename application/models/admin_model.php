@@ -80,5 +80,22 @@ class admin_model extends CI_model{
      );
      $this->db->insert('item', $data);
   }
+
+  public function deleteItem($id)
+  {
+    $where = array('id' => $id );
+    $this->db->delete('item', $where);
+  }
+
+  public function updateItem($id)
+  {
+    $where = array('id' => $id );
+    $data = array(
+      'item' => $this->input->post('item'),
+  #    'stock' => $this->input->post('stock'),
+     );
+     $this->db->where($where);
+     $this->db->update('item', $data);
+  }
 }
  ?>
