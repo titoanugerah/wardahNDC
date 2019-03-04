@@ -24,6 +24,14 @@ class Warehouse Extends CI_Controller{
     $data['view_name'] = 'item';
     $this->load->view('template', $data);
   }
+
+  public function detailItem($id)
+  {
+    $data['detail'] = $this->warehouse_model->getAllData('view_item');
+    $data['title'] = 'Daftar Item';
+    $data['view_name'] = 'item';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>
