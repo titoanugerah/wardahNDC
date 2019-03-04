@@ -104,10 +104,16 @@
 
   <!--select2-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+  });
+  </script>
   <!--  Notifications Plugin-->
   <script src="<?php  echo base_url('./assets/template/material'); ?>/assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?php echo base_url('./assets/template/material'); ?>/assets/demo/demo.js"></script>
+
 
 </body>
 

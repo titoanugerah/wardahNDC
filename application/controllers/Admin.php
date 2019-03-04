@@ -62,7 +62,7 @@ class Admin extends CI_Controller{
       $this->admin_model->createItem();
       redirect(base_url('itemList'));
     }
-    $data['list'] = $this->admin_model->getAllData('item');
+    $data['list'] = $this->admin_model->getAllData('view_item');
     $data['title'] = 'Stok Item';
     $data['view_name'] = 'itemList';
     $data['notification'] = 'no';
@@ -83,6 +83,7 @@ class Admin extends CI_Controller{
       $data['notification'] = 'updateItemSuccess';
       $this->admin_model->updateItem($id);
     }
+#    $data['stock'] = $this->admin_model->getDataRow($id, 'stock')
     $data['detail'] = $this->admin_model->getDataRow($id,'item');
     $data['title'] = 'Detail Item '.$data['detail']->item;
     $data['view_name'] = 'detailItem';

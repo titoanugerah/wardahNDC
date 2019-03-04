@@ -5,8 +5,8 @@
   </a>
 </li>
 <li class="nav-item active">
-  <a class="nav-link" href=" <?php echo base_url('webConf'); ?> ">
-    <i class="material-icons">language</i>
-    <p>Konfigurasi Web</p>
+  <a class="nav-link" href=" <?php echo base_url('item'); ?> ">
+    <i class="material-icons">list</i>
+    <p>Item</p>
   </a>
 </li>
