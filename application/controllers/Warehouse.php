@@ -25,13 +25,20 @@ class Warehouse Extends CI_Controller{
     $this->load->view('template', $data);
   }
 
-  public function detailItem($id)
+  public function itemDetail($id)
   {
-    $data['detail'] = $this->warehouse_model->getAllData('view_item');
-    $data['title'] = 'Daftar Item';
-    $data['view_name'] = 'item';
+    $data['notification'] = 'no';
+    if ($this->input->post('updateItem')) {
+      $this->warehouse_model->updateItem($id);
+    }
+    $data['stock'] = $this->warehouse_model->getSomeData('id_item',$id,'view_stock');
+    $data['detail'] = $this->warehouse_model->getDataRow($id,'view_item');
+    $data['title'] = 'Detail Item ';
+    $data['view_name'] = 'itemDetail';
     $this->load->view('template', $data);
   }
+
+
 }
 
  ?>

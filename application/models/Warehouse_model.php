@@ -22,7 +22,7 @@ class Warehouse_model extends CI_model{
      );
 
      $this->db->insert('item', $data);
-     $this->updateStockItem($this->db->insert_id(), 0);
+     $this->updateStockItem($this->db->insert_id(), $this->input->post('stock'));
   }
 
   public function updateStockItem($id_item, $qty_in)
@@ -33,9 +33,28 @@ class Warehouse_model extends CI_model{
       'id_pic' => $this->session->userdata['id'],
       'information' => 'Barang masuk ke gudang '
      );
-
      $this->db->insert('update_stock', $data);
+  }
 
+  public function getDataRow($id, $table)
+  {
+    $where = array('id' => $id);
+    $query = $this->db->get_where($table, $where);
+    return $query->row();
+  }
+
+  public function getSomeData($row, $id, $table)
+  {
+    $where = array($row => $id);
+    $query = $this->db->get_where($table, $where);
+    return $query->result();
+  }
+
+  public function updateItem($id)
+  {
+    $where = array('id' => $id);
+    $data = array('item' => $this->input->post('item'));
+    $this->db->update('item', $data);
   }
 
 }
