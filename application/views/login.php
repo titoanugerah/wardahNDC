@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('./assets/template/uikit'); ?>/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="<?php echo base_url('./assets/logo/wardah.png'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Wardah | Login </title>
+  <title>PARAGON | Login </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Wardah Warehouse Information System " data-placement="bottom" target="_blank">Warehouse Wardah</a>
+        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="PT. Paragon Technology and Innovation " data-placement="bottom" target="_blank">PT. Paragon Technology and Innovation</a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
           <span class="navbar-toggler-bar middle-bar"></span>
