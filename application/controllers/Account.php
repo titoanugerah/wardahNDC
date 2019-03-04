@@ -15,7 +15,7 @@ class Account extends CI_Controller{
       $login = $this->account_model->loginValidation();
       if($login['status']==1 && ($this->input->post('captcha')==$this->session->userdata('result'))){
         $this->session->set_userdata($login['session']);
-        redirect(base_url(''));
+        redirect(base_url('dashboard'));
       } elseif($login['status']==1){
         $data['notification'] = 'captchaWrong';
       } else {
@@ -50,6 +50,23 @@ class Account extends CI_Controller{
     $captcha = $this->account_model->createCaptcha();
     $this->session->set_userdata($captcha);
     $this->load->view('forgotPassword', $data);
+  }
+
+  public function dashboard()
+  {
+    $data['title'] = 'no';
+    $data['view_name'] = 'no';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+  }
+
+  public function profile()
+  {
+    $data['title'] = 'Profil';
+    $data['view_name'] = 'profile';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+
   }
 
 }
