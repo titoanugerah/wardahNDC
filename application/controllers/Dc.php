@@ -6,6 +6,11 @@ class Dc extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('dc_model');
+    if (!$this->session->userdata['login']) {
+      redirect(base_url('login'));
+    } elseif ($this->session->userdata['role']!='dc') {
+      redirect(base_url('error/501'));
+    }
   }
 
   public function order()
