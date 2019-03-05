@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-
+#DEFAULT STRUCTURE
 $route['default_controller'] = 'account/dashboard';
 $route['404_override'] = 'account/error404';
 $route['translate_uri_dashes'] = FALSE;
@@ -22,7 +21,7 @@ $route['deleteAccount/(:any)'] = 'admin/deleteAccount/$1';
 $route['itemList'] = 'admin/itemList';
 $route['detailItem/(:any)'] = 'admin/detailItem/$1';
 $route['recapOrder'] = 'admin/recapOrder';
-#$route['detailRecapOrder']
+$route['detailRecapOrder/(:any)'] = 'admin/detailRecapOrder/$1';
 
 #WAREHOUSE AREA
 $route['item'] = 'warehouse/item';

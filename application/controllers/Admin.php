@@ -102,5 +102,15 @@ class Admin extends CI_Controller{
     $data['view_name'] = 'recapOrder';
     $this->load->view('template', $data);
   }
+
+  public function detailRecapOrder($id)
+  {
+    $data['notification'] = 'no';
+    $data['recap'] = $this->admin_model->getSomeData('id_global_invoice', $id, 'view_global_invoices');
+//    $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
+    $data['title'] = 'Pemesanan Barang';
+    $data['view_name'] = 'detailRecapOrder';
+    $this->load->view('template', $data);
+  }
 }
  ?>
