@@ -22,3 +22,9 @@
     <p>List Stok Barang</p>
   </a>
 </li>
+<li class="nav-item active">
+  <a class="nav-link" href=" <?php echo base_url('orderRecap'); ?> ">
+    <i class="material-icons">announcement</i>
+    <p>Pesanan</p>
+  </a>
+</li>

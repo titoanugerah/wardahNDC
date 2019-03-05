@@ -45,7 +45,6 @@ class Account extends CI_Controller{
       } else {
         $data['notification'] = 'usernameWrong';
       }
-
     }
     $captcha = $this->account_model->createCaptcha();
     $this->session->set_userdata($captcha);
