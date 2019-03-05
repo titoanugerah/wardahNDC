@@ -27,3 +27,4 @@ $route['itemDetail/(:any)'] = 'warehouse/itemDetail/$1';
 
 #DISTRIBUTION CENTER AREA
 $route['order'] = 'dc/order';
+$route['deleteOrder/(:any)'] = 'dc/deleteOrder/$1';

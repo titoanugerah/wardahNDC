@@ -10,11 +10,23 @@ class Dc extends CI_Controller{
 
   public function order()
   {
-    $data['list'] = $this->dc_model->getAllData('view_item');
-    $data['title'] = 'Stok Item';
-    $data['view_name'] = 'itemList';
     $data['notification'] = 'no';
+    if ($this->input->post('addOrder')) {
+      $this->dc_model->addOrder();
+      redirect(base_url('order'));
+    }
+    $id = $this->dc_model->getID();
+    $data['list1'] = $this->dc_model->getAllData('view_item');
+    $data['list'] = $this->dc_model->getSomeData('id_order', $id['order'], 'view_detail_order');
+    $data['title'] = 'List Pesan Item';
+    $data['view_name'] = 'orderList';
     $this->load->view('template', $data);
+  }
+
+  public function deleteOrder($id)
+  {
+    $this->dc_model->deleteOrder($id);
+    redirect(base_url('order'));
   }
 }
 
