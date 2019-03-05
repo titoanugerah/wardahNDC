@@ -114,7 +114,7 @@
             <p>Silahkan isi form dibawah Ini</p>
             <br>
             <div class="row">
-              <div class="col-md-6 pr-1">
+              <div class="col-md-12 pr-1">
                 <div class="form-group">
                   <label>Nama Item</label>
                   <select class="js-example-basic-single" name="id_item">
@@ -125,14 +125,26 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 pl-1">
+            </div>
+            <br>
+            <div class="row">
+
+              <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Jumlah Stok Masuk</label>
                   <input type="number" name="qty_in" class="form-control" placeholder="Masukan stok masuk" value="" required>
                 </div>
               </div>
+
+
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Batch</label>
+                <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+              </div>
             </div>
 
+          </div>
           </div>
 
           <div class="modal-footer modal-danger">

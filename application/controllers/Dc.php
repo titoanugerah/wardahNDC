@@ -8,7 +8,14 @@ class Dc extends CI_Controller{
     $this->load->model('dc_model');
   }
 
-  
+  public function order()
+  {
+    $data['list'] = $this->dc_model->getAllData('view_item');
+    $data['title'] = 'Stok Item';
+    $data['view_name'] = 'itemList';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>
