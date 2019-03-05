@@ -78,9 +78,23 @@ class Account extends CI_Controller{
     $data['title'] = 'Profil';
     $data['view_name'] = 'profile';
     $this->load->view('template', $data);
-
   }
 
+  public function error($id)
+  {
+    $data['title'] = 'Error';
+    $data['view_name'] = 'no';
+    $data['notification'] = 'error'.$id;
+    $this->load->view('template', $data);
+  }
+
+  public function error404()
+  {
+    $data['title'] = 'Error';
+    $data['view_name'] = 'no';
+    $data['notification'] = 'error404';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>

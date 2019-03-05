@@ -6,8 +6,10 @@ class Admin extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('admin_model');
-    if ($this->session->userdata['role']!='admin') {
-      redirect(base_url(''));
+    if (!$this->session->userdata['login']) {
+      redirect(base_url('login'));
+    } elseif ($this->session->userdata['role']!='admin') {
+      redirect(base_url('error/501'));
     }
   }
 
@@ -97,7 +99,7 @@ class Admin extends CI_Controller{
     $data['recap'] = $this->admin_model->getAllData('global_invoice');
 //    $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
     $data['title'] = 'Pemesanan Barang';
-    $data['view_name'] = 'orderRecap';
+    $data['view_name'] = 'recapOrder';
     $this->load->view('template', $data);
   }
 }

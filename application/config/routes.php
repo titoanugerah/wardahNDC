@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'account/dashboard';
-$route['404_override'] = '';
+$route['404_override'] = 'account/error404';
 $route['translate_uri_dashes'] = FALSE;
 
 #ACCOUNT AREA
@@ -12,6 +12,7 @@ $route['logout'] = 'account/logout';
 $route['forgotPassword'] = 'account/forgotPassword';
 $route['dashboard'] = 'account/dashboard';
 $route['profile'] = 'account/profile';
+$route['error/(:any)'] = 'account/error/$1';
 
 #ADMIN AREA
 $route['webConf'] = 'admin/webConf';
