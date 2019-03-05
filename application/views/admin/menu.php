@@ -23,7 +23,7 @@
   </a>
 </li>
 <li class="nav-item active">
-  <a class="nav-link" href=" <?php echo base_url('orderRecap'); ?> ">
+  <a class="nav-link" href=" <?php echo base_url('recapOrder'); ?> ">
     <i class="material-icons">announcement</i>
     <p>Pesanan</p>
   </a>

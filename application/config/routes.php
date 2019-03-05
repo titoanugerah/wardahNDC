@@ -20,7 +20,8 @@ $route['detailAccount/(:any)'] = 'admin/detailAccount/$1';
 $route['deleteAccount/(:any)'] = 'admin/deleteAccount/$1';
 $route['itemList'] = 'admin/itemList';
 $route['detailItem/(:any)'] = 'admin/detailItem/$1';
-$route['orderRecap'] = 'admin/orderRecap'; 
+$route['recapOrder'] = 'admin/recapOrder';
+#$route['detailRecapOrder']
 
 #WAREHOUSE AREA
 $route['item'] = 'warehouse/item';

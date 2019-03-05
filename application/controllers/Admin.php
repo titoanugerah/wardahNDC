@@ -7,7 +7,7 @@ class Admin extends CI_Controller{
     parent::__construct();
     $this->load->model('admin_model');
     if ($this->session->userdata['role']!='admin') {
-      redirect(base_url('login'));
+      redirect(base_url(''));
     }
   }
 
@@ -91,7 +91,7 @@ class Admin extends CI_Controller{
 
   }
 
-  public function orderRecap()
+  public function recapOrder()
   {
     $data['notification'] = 'no';
     $data['recap'] = $this->admin_model->getAllData('global_invoice');
