@@ -58,5 +58,12 @@ class Warehouse_model extends CI_model{
     $this->db->update('item', $data);
   }
 
+  public function createItemOut()
+  {
+    $data = array(
+      'id_item' => $this->input->post('id_item'),
+     );
+  }
+
 }
  ?>

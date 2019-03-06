@@ -21,8 +21,7 @@
         <div class="card-body ">
           <div class="tab-content text-justify">
             <div class="tab-pane active" id="itemList">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createItem">Tambah Item Baru</button>
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateItem">Update Item</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Update Item</button>
               <div class="card-body">
                 <table class="table">
                   <thead>
@@ -30,7 +29,6 @@
                       <th class="text-center">#</th>
                       <th class="text-center">Nama</th>
                       <th class="text-center">Stok</th>
-                      <th class="text-justify">Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -55,13 +53,13 @@
 
 
 
-  <div class="modal fade" id="updateItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form  method="post">
       <div class="modal-content">
 
           <div class="modal-header">
-            <h5 class="modal-title" id="">Update Item</h5>
+            <h5 class="modal-title" id="">XXXX</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -88,8 +86,8 @@
 
               <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  <label>Jumlah Stok Masuk</label>
-                  <input type="number" name="qty_in" class="form-control" placeholder="Masukan stok masuk" value="" required>
+                  <label>Jumlah Stok Keluar</label>
+                  <input type="number" name="qty_out" class="form-control" placeholder="Masukan stok keluar" value="" required>
                 </div>
               </div>
 
@@ -105,7 +103,7 @@
           </div>
 
           <div class="modal-footer modal-danger">
-            <button type="submit" class="btn btn-warning" name="updateItem" value="updateItem">Update Stok Item</button>
+            <button type="submit" class="btn btn-warning" name="itemOut" value="itemOut">Buat Nota</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
         </div>
       </div>

@@ -45,6 +45,9 @@ class Warehouse Extends CI_Controller{
 
   public function globalOrder()
   {
+    if ($this->input->post('itemOut')) {
+      $this->warehouse_model->createItemOut();
+    }
     $data['notification'] = 'no';
     $data['order'] = $this->warehouse_model->getSomeData('status',2,'view_global_invoices');
     //$data['detail'] = $this->warehouse_model->getDataRow($id,'view_item');
