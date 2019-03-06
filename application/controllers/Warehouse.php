@@ -43,6 +43,15 @@ class Warehouse Extends CI_Controller{
     $this->load->view('template', $data);
   }
 
+  public function globalOrder()
+  {
+    $data['notification'] = 'no';
+    $data['order'] = $this->warehouse_model->getSomeData('status',2,'view_global_invoices');
+    //$data['detail'] = $this->warehouse_model->getDataRow($id,'view_item');
+    $data['title'] = 'Pesanan ';
+    $data['view_name'] = 'globalOrder';
+    $this->load->view('template', $data);
+  }
 
 }
 
