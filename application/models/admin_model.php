@@ -96,11 +96,11 @@ class Admin_model extends CI_model{
      $this->db->insert('update_stock', $data);
   }
 
-  public function getSomeResult($row, $id, $table)
+  public function getSomeData($row, $id, $table)
   {
-//    $where = array($row => $id);
-//    $query = $this->db->get_where($table, $where);
-//    return $query->result();
+    $where = array($row => $id);
+    $query = $this->db->get_where($table, $where);
+    return $query->result();
   }
 
 

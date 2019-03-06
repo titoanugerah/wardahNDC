@@ -6,6 +6,8 @@ class Admin extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('admin_model');
+    $this->load->model('warehouse_model');
+
     if (!$this->session->userdata['login']) {
       redirect(base_url('login'));
     } elseif ($this->session->userdata['role']!='admin') {
@@ -85,7 +87,7 @@ class Admin extends CI_Controller{
       $data['notification'] = 'updateItemSuccess';
       $this->admin_model->updateItem($id);
     }
-    $data['stock'] = $this->admin_model->getSomeResult('id_item',$id,'view_stock');
+    $data['stock'] = $this->warehouse_model->getSomeData('id_item',$id,'view_stock');
     $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
     $data['title'] = 'Detail Item '.$data['detail']->item;
     $data['view_name'] = 'detailItem';
@@ -106,7 +108,7 @@ class Admin extends CI_Controller{
   public function detailRecapOrder($id)
   {
     $data['notification'] = 'no';
-    $data['recap'] = $this->admin_model->getSomeResult('id_global_invoice', $id, 'view_global_invoices');
+    $data['recap'] = $this->warehouse_model->getSomeData('id_global_invoice', $id, 'view_global_invoices');
 //    $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
     $data['title'] = 'Pemesanan Barang';
     $data['view_name'] = 'detailRecapOrder';
