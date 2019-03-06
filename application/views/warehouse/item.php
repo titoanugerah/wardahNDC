@@ -22,7 +22,7 @@
           <div class="tab-content text-justify">
             <div class="tab-pane active" id="itemList">
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createItem">Tambah Item Baru</button>
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateItem">Update Item</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Update Item</button>
               <div class="card-body">
                 <table class="table">
                   <thead>
@@ -98,7 +98,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="updateItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form  method="post">
       <div class="modal-content">

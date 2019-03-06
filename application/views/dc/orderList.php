@@ -20,7 +20,7 @@
         <div class="card-body ">
           <div class="tab-content text-justify">
             <div class="tab-pane active" id="orderList">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addOrder">Tambah/Update Item </button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Tambah/Update Item </button>
 
               <div class="card-body">
                 <table class="table">
@@ -87,7 +87,7 @@
 
   </div>
 
-  <div class="modal fade" id="addOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form  method="post">
       <div class="modal-content">

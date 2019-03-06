@@ -31,3 +31,6 @@ $route['globalOrder'] = 'warehouse/globalOrder';
 #DISTRIBUTION CENTER AREA
 $route['order'] = 'dc/order';
 $route['deleteOrder/(:any)'] = 'dc/deleteOrder/$1';
+
+#TESTING PURPOSE
+$route['test'] = 'welcome/test';

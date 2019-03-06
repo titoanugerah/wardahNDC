@@ -1,4 +1,3 @@
-<?php if(!$this->session->userdata['login']){redirect(base_url('login'));} ?>
 
 <!doctype html>
 <html lang="en">
@@ -36,7 +35,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <h2>&nbsp;<?php echo "".$title; ?></h2>
+            <h2>&nbsp;<?php echo "Test Page"; ?></h2>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -65,11 +64,24 @@
           <ol class="breadcrumb" style="background:white;">
             <li class="breadcrumb-item">PARAGON</li>
             <li class="breadcrumb-item"><?php echo ucfirst($this->session->userdata['role']); ?></li>
-            <li class="breadcrumb-item active"><?php echo ucfirst($title); ?></li>
+            <li class="breadcrumb-item active">Test Page</li>
           </ol>
-          <?php $this->load->view('notification/'.$notification); ?>
-          <?php $this->load->view($this->session->userdata['role'].'/'.$view_name); ?>
+
         </div>
+
+        <div class="card">
+          <br><br><br>
+          <div class="form-group">
+            <select class="js-example-basic-single" name="state">
+  <option value="AL">Alabama</option>
+    ...
+  <option value="WY">Wyoming</option>
+</select>
+          </div>
+
+          <br><br><br>
+        </div>
+
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -107,11 +119,8 @@
   <script type="text/javascript">
   $(document).ready(function() {
     $('.js-example-basic-single').select2({
-      dropdownParent: $('#myModal'),
       width: '80%' // need to override the changed default
     });
-
-
   });
   </script>
   <!--  Notifications Plugin-->
