@@ -23,7 +23,7 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white">
       <div class="logo">
-        <a href="#" class="simple-text logo-normal">WARDAH</a>
+        <a href="#" class="simple-text logo-normal">PARAGON</a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
