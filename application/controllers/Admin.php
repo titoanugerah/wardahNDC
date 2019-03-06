@@ -107,9 +107,18 @@ class Admin extends CI_Controller{
 
   public function detailRecapOrder($id)
   {
+    if ($this->input->post('agreeOrder')) {
+      $this->admin_model->updateStatus('global_invoice', 'id', $id, 2);
+      $data['detailOrder'] = $this->admin_model->getSomeData('id_global_invoice', $id, 'view_detail_order');
+      foreach ($data['detailOrder'] as $item) {
+        $this->admin_model->updateStatus('detail_order', 'id', $item->id, 2);
+      }
+      
+
+    }
     $data['notification'] = 'no';
     $data['recap'] = $this->warehouse_model->getSomeData('id_global_invoice', $id, 'view_global_invoices');
-//    $data['detail'] = $this->admin_model->getDataRow($id,'view_item');
+    $data['dc'] = $this->admin_model->getSomeData('id_global_invoice',$id, 'view_dc_order');
     $data['title'] = 'Pemesanan Barang';
     $data['view_name'] = 'detailRecapOrder';
     $this->load->view('template', $data);

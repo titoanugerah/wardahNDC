@@ -120,5 +120,13 @@ class Admin_model extends CI_model{
      $this->db->where($where);
      $this->db->update('item', $data);
   }
+
+  public function updateStatus($table, $param, $id, $value)
+  {
+    $where = array($param => $id );
+    $data = array('status' => $value );
+    $this->db->where($where);
+    $this->db->update($table, $data);
+  }
 }
  ?>

@@ -52,7 +52,15 @@ class Dc_model extends CI_model{
     return $id;
   }
 
-  public function getId()
+  public function updateStatus($table, $param, $id, $value)
+  {
+    $where = array($param => $id );
+    $data = array('status' => $value );
+    $this->db->where($where);
+    $this->db->update($table, $data);
+  }
+
+  public function getID()
   {
     $query = $this->db->query('SELECT * FROM global_invoice  order by id desc limit 1');
     $today = date("Y-m-d");
@@ -62,6 +70,7 @@ class Dc_model extends CI_model{
       $this->insertGlobalInvoices();
       $query = $this->db->query('SELECT * FROM global_invoice  order by id desc limit 1');
       $id['globalInvoice'] = $query->row('id');
+      $this->updateStatus('global_invoice', 'id', ($id['globalInvoice']-1), 1);
     }
     $id['order'] = $this->getIDOrder($id['globalInvoice']);
     return $id;

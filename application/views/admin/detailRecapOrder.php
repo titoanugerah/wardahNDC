@@ -13,6 +13,18 @@
                     Item
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#dcOrder" data-toggle="tab">
+                    <i class="material-icons">person_pin</i>
+                    DC Pemesan
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#option" data-toggle="tab">
+                    <i class="material-icons">rate_review</i>
+                    Opsi
+                  </a>
+                </li>
 
               </ul>
             </div>
@@ -42,32 +54,38 @@
                   </table>
                 </div>
               </div>
-              <div class="tab-pane" id="createItem">
+
+              <div class="tab-pane" id="dcOrder">
                 <div class="card-body">
-                  <form method="post">
-
-                    <div class="row">
-                      <div class="col-md-6 pr-1">
-                        <div class="form-group">
-                          <label>Nama Item</label>
-                          <input type="text" name="item" class="form-control" placeholder="Masukan nama item" value="" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6 pl-1">
-                        <div class="form-group">
-                          <label>Stok Awal</label>
-                          <input type="number" name="stock" class="form-control" placeholder="Masukan stok awal" value="" required>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="button-container">
-                      <button type="submit" name="createItem" value="createItem" class="btn btn-primary">Tambah Item</button>
-                    </div>
-                  </form>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Nama </th>
+                        <th class="text-center">Order ID</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $i = 1; foreach ($dc as $item): ?>
+                        <tr>
+                          <td class="text-center"><?php echo $i ?></td>
+                          <td class="text-center"><?php echo ucwords($item->fullname); ?></td>
+                          <td class="text-center"> <a href="<?php echo base_url('browseOrder/'.$item->id); ?>"><?php echo "#".$item->id; ?></a> </td>
+                          <?php $i++; endforeach; ?>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+
+                <div class="tab-pane" id="option">
+                  <div class="card-body">
+                    <form  method="post">
+                      <button type="submit" name="agreeOrder" value="agreeOrder" class="btn btn-primary">Setujui Order</button>
+                  </form>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>
