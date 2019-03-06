@@ -96,6 +96,12 @@ class Admin_model extends CI_model{
      $this->db->insert('update_stock', $data);
   }
 
+  public function getSomeData($row, $id, $table)
+  {
+    $where = array($row => $id);
+    $query = $this->db->get_where($table, $where);
+    return $query->result();
+  }
 
 
   public function deleteItem($id)
