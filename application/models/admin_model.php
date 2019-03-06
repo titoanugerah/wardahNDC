@@ -98,9 +98,9 @@ class Admin_model extends CI_model{
 
   public function getSomeResult($row, $id, $table)
   {
-    $where = array($row => $id);
-    $query = $this->db->get_where($table, $where);
-    return $query->result();
+//    $where = array($row => $id);
+//    $query = $this->db->get_where($table, $where);
+//    return $query->result();
   }
 
 
