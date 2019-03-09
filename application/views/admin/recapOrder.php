@@ -36,7 +36,7 @@
                       <tr>
                         <td class="text-center"><?php echo $i ?></td>
                         <td class="text-center"><?php echo ucwords($item->date); ?></td>
-                        <td class="text-center"><?php if ($item->status==0) {echo "Mulai Pemesanan";} elseif($item->status==1){echo "Belum Ditangani";}elseif($item->status==2){echo "Disetujui Admin";}elseif($item->status==3){echo "Dihandle Bagian Gudang";}elseif($item->status==4){echo "Pengemasan";}elseif($item->status==5){echo "Dikirim";}elseif($item->status==6){echo "Selesai";} ?></td>
+                        <td class="text-center"><?php if ($item->status==0) {echo "Masa Order";} elseif($item->status==1){echo "Belum Diproses";}elseif($item->status==2){echo "Sudah Disetujui Admin";}elseif($item->status==3){echo "Diproses Bagian Stock";}elseif($item->status==4){echo "Pengiriman dari Stock ke Packaging";}elseif($item->status==5){echo "Diproses Packaging";}elseif($item->status==6){echo "Dikirim Ke masing masing DC";}elseif($item->status==7){echo "Pesanan Selesai";} ?></td>
                         <td class="td-actions text-center">
                           <center>
                             <a href="<?php echo base_url('detailRecapOrder/'.$item->id); ?>">

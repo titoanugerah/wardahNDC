@@ -14,6 +14,13 @@
                   </a>
                 </li>
 
+                <li class="nav-item">
+                  <a class="nav-link" href="#itemList" data-toggle="tab">
+                    <i class="material-icons">assignment_turned_in</i>
+                    Pesanan Selesai Diproses
+                  </a>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -21,7 +28,7 @@
         <div class="card-body ">
           <div class="tab-content text-justify">
             <div class="tab-pane active" id="itemList">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Update Item</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Proses Pesanan</button>
               <div class="card-body">
                 <table class="table">
                   <thead>
@@ -59,7 +66,7 @@
       <div class="modal-content">
 
           <div class="modal-header">
-            <h5 class="modal-title" id="">XXXX</h5>
+            <h5 class="modal-title" id="">Form Proses Order</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

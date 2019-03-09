@@ -58,11 +58,60 @@ class Warehouse_model extends CI_model{
     $this->db->update('item', $data);
   }
 
+  public function checkOrder($id_item, $qty_out)
+  {
+    $where = array(
+      'id_item' => $id_item,
+      'status' => 0
+     );
+    $query = $this->db->get_where('detail_order', $where);
+    if($query->row('qty')>=$qty_out){
+      $status = 0;
+    } else {
+      $status = 1;
+    }
+    return $status;
+  }
+
+
+  public function getSelectedData($var, $arg, $table)
+  {
+
+  }
+
+  public function checkBatch($id_item, $batch)
+  {
+    $where = array(
+      'id_item' => $id_item,
+      'batch' => $batch
+     );
+     $query = $this->db->get_where('update_stock', $where);
+     return $query->num_rows();
+  }
+
+
   public function createItemOut()
   {
-    $data = array(
-      'id_item' => $this->input->post('id_item'),
-     );
+    $amount = $this->getDataRow($this->input->post('id_item'), 'view_item');
+    $qtyStatus = $this->checkOrder($this->input->post('id_item'), $this->input->post('qty_out'));
+    $batchStatus = $this->checkBatch($this->input->post('id_item'), $this->input->post('batch'));
+    if ($amount->stock <= $this->input->post('qty_out')) {
+      $status = 0;
+    } elseif ($qtyStatus == 1) {
+      $status = 1;
+    } elseif ($batchStatus == 0) {
+      $status = 2;
+    } else {
+      $data = array(
+        'id_item' => $this->input->post('id_item'),
+        'qty_out' => $this->input->post('qty_out'),
+        'batch' => $this->input->post('batch'),
+        'status' => 1
+       );
+      $this->db->insert('detail_order', $data);
+      $status = 3;
+    }
+    return $status;
   }
 
 }
