@@ -15,7 +15,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#itemList" data-toggle="tab">
+                  <a class="nav-link" href="#handled" data-toggle="tab">
                     <i class="material-icons">assignment_turned_in</i>
                     Pesanan Selesai Diproses
                   </a>
@@ -50,6 +50,34 @@
                   </table>
                 </div>
               </div>
+
+              <div class="tab-pane" id="handled">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Proses Pesanan</button>
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Nama</th>
+                        <th class="text-center">Order</th>
+                        <th class="text-center">Sukses</th>
+                        <th class="text-center">Selisih</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $i = 1; foreach ($handled as $item): ?>
+                        <tr>
+                          <td class="text-center"><?php echo $i ?></td>
+                          <td class="text-center"><?php echo ucwords($item->item); ?></td>
+                          <td class="text-center"><?php echo $item->qty_in; ?></td>
+                          <td class="text-center"><?php echo $item->qty_out; ?></td>
+                          <td class="text-center"><?php echo $item->qty_diff; ?></td>
+                          <?php $i++; endforeach; ?>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
