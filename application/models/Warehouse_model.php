@@ -65,7 +65,7 @@ class Warehouse_model extends CI_model{
       'status' => 0
      );
     $query = $this->db->get_where('detail_order', $where);
-    if($query->row('qty')>=$qty_out){
+    if($query->row('qty')<=$qty_out){
       $status = 0;
     } else {
       $status = 1;
@@ -106,9 +106,11 @@ class Warehouse_model extends CI_model{
         'id_item' => $this->input->post('id_item'),
         'qty_out' => $this->input->post('qty_out'),
         'batch' => $this->input->post('batch'),
-        'status' => 1
+        'status' => 1,
+        'id_pic' => $this->session->userdata['id'],
+        'information' => 'Barang keluar pada '.date('d-m-Y')
        );
-      $this->db->insert('detail_order', $data);
+      $this->db->insert('update_stock', $data);
       $status = 3;
     }
     return $status;
