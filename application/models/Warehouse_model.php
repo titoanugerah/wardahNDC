@@ -76,7 +76,9 @@ class Warehouse_model extends CI_model{
 
   public function getSelectedData($var, $arg, $table)
   {
-
+    $where = array($var => $arg);
+    $query = $this->db->get_where($table, $where);
+    return $query->row();
   }
 
   public function checkBatch($id_item, $batch)
@@ -95,7 +97,7 @@ class Warehouse_model extends CI_model{
     $amount = $this->getDataRow($this->input->post('id_item'), 'view_item');
     $qtyStatus = $this->checkOrder($this->input->post('id_item'), $this->input->post('qty_out'));
     $batchStatus = $this->checkBatch($this->input->post('id_item'), $this->input->post('batch'));
-    if ($amount->stock <= $this->input->post('qty_out')) {
+    if ($amount->stock < $this->input->post('qty_out')) {
       $status = 0;
     } elseif ($qtyStatus == 1) {
       $status = 1;
@@ -111,9 +113,38 @@ class Warehouse_model extends CI_model{
         'information' => 'Barang keluar pada '.date('d-m-Y')
        );
       $this->db->insert('update_stock', $data);
+      $this->checkDifference($this->input->post('id_item'));
       $status = 3;
     }
     return $status;
+  }
+
+  public function checkDifference($id_item)
+  {
+    $checkFull = $this->getSelectedData('id_item', $id_item, 'view_difference_order');
+    if ($checkFull->qty_diff==0) {
+      $this->updateStatusStock($this->input->post('id_item'), 2);
+    }
+    $query = $this->db->get('view_difference_order');
+    if ($query->num_rows()==0) {
+      $this->updateStatusGlobalInvoices(2,4);
+    }
+  }
+
+  public function updateStatusStock($id_item, $value)
+  {
+    $where = array('id_item' => $id_item);
+    $data = array('status' => $value );
+    $this->db->where($where);
+    $this->db->update('update_stock', $data);
+  }
+
+  public function updateStatusGlobalInvoices($from, $to)
+  {
+    $where = array('status' => $from);
+    $data = array('status' => $to );
+    $this->db->where($where);
+    $this->db->update('global_invoice', $data);
   }
 
 }
