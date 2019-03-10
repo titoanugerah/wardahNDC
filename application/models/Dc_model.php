@@ -60,6 +60,17 @@ class Dc_model extends CI_model{
     $this->db->update($table, $data);
   }
 
+  public function updateStatusOrder($id_global_invoice, $value)
+  {
+    $id_order = $this->getSomeData('id_global_invoice', $id_global_invoice, 'order');
+    foreach ($id_order as $item) {
+      $where = array('id_order' => $item->id);
+      $data = array('status' => $value);
+      $this->db->where($where);
+      $this->db->update('detail_order', $data);
+    }
+  }
+
   public function getID()
   {
     $query = $this->db->query('SELECT * FROM global_invoice  order by id desc limit 1');
@@ -71,6 +82,7 @@ class Dc_model extends CI_model{
       $query = $this->db->query('SELECT * FROM global_invoice  order by id desc limit 1');
       $id['globalInvoice'] = $query->row('id');
       $this->updateStatus('global_invoice', 'id', ($id['globalInvoice']-1), 1);
+      $this->updateStatusOrder($id['globalInvoice']-1, 1);
     }
     $id['order'] = $this->getIDOrder($id['globalInvoice']);
     return $id;
@@ -126,7 +138,8 @@ class Dc_model extends CI_model{
       $data = array(
         'id_order' => $id['order'],
         'id_item' => $this->input->post('id_item'),
-        'qty' => $this->input->post('qty')
+        'qty' => $this->input->post('qty'),
+        'status' => 0
       );
       $this->db->insert('detail_order', $data);
     }

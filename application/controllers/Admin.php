@@ -113,11 +113,9 @@ class Admin extends CI_Controller{
       foreach ($data['detailOrder'] as $item) {
         $this->admin_model->updateStatus('detail_order', 'id', $item->id, 2);
       }
-      
-
     }
     $data['notification'] = 'no';
-    $data['recap'] = $this->warehouse_model->getSomeData('id_global_invoice', $id, 'view_global_invoices');
+    $data['recap'] = $this->warehouse_model->getSomeData('id_global_invoice', $id, 'view_global_order');
     $data['dc'] = $this->admin_model->getSomeData('id_global_invoice',$id, 'view_dc_order');
     $data['title'] = 'Pemesanan Barang';
     $data['view_name'] = 'detailRecapOrder';

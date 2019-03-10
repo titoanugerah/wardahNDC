@@ -62,10 +62,10 @@ class Warehouse_model extends CI_model{
   {
     $where = array(
       'id_item' => $id_item,
-      'status' => 0
+//      'status' => 0
      );
-    $query = $this->db->get_where('detail_order', $where);
-    if($query->row('qty')<=$qty_out){
+    $query = $this->db->get_where('view_difference_order', $where);
+    if($qty_out<=$query->row('qty_diff') || $query->num_rows()==0){
       $status = 0;
     } else {
       $status = 1;
@@ -94,9 +94,11 @@ class Warehouse_model extends CI_model{
 
   public function createItemOut()
   {
+    #var_dump($this->input->post('id_item').' = '.$this->input->post('qty_out').' = '.$this->input->post('batch'));die;
     $amount = $this->getDataRow($this->input->post('id_item'), 'view_item');
     $qtyStatus = $this->checkOrder($this->input->post('id_item'), $this->input->post('qty_out'));
     $batchStatus = $this->checkBatch($this->input->post('id_item'), $this->input->post('batch'));
+    //var_dump($amount->stock <= $this->input->post('qty_out'));die;
     if ($amount->stock < $this->input->post('qty_out')) {
       $status = 0;
     } elseif ($qtyStatus == 1) {
@@ -123,7 +125,9 @@ class Warehouse_model extends CI_model{
   {
     $checkFull = $this->getSelectedData('id_item', $id_item, 'view_difference_order');
     if ($checkFull->qty_diff==0) {
-      $this->updateStatusStock($this->input->post('id_item'), 2);
+      $this->updateStatusStock($this->input->post('id_item'), 1, 2);
+      $this->updateStatusOrder($this->input->post('id_item'), 2, 3);
+
     }
     $query = $this->db->get('view_difference_order');
     if ($query->num_rows()==0) {
@@ -131,12 +135,26 @@ class Warehouse_model extends CI_model{
     }
   }
 
-  public function updateStatusStock($id_item, $value)
+  public function updateStatusStock($id_item, $from, $value)
   {
-    $where = array('id_item' => $id_item);
+    $where = array(
+      'id_item' => $id_item,
+      'status' => $from
+    );
     $data = array('status' => $value );
     $this->db->where($where);
     $this->db->update('update_stock', $data);
+  }
+
+  public function updateStatusOrder($id_item, $from, $value)
+  {
+    $where = array(
+      'id_item' => $id_item,
+      'status' => $from
+    );
+    $data = array('status' => $value );
+    $this->db->where($where);
+    $this->db->update('detail_order', $data);
   }
 
   public function updateStatusGlobalInvoices($from, $to)

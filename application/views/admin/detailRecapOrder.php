@@ -32,7 +32,7 @@
         </div>
         <div class="card-body ">
           <div class="tab-content text-justify">
-            <div class="tab-pane active" id="itemList">
+            <div class="tab-pane active" id="orderRecap">
               <div class="card-body">
                 <table class="table">
                   <thead>
