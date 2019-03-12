@@ -21,12 +21,11 @@ class Packing extends CI_Controller{
   public function detailPackingIn($id)
   {
     $data['list'] = $this->packing_model->getSomeData('id_global_invoice', $id, 'view_packing');
-    $data['checked'] = $this->packing_model->getCheckedItem($id);
+    #$data['checked'] = $this->packing_model->getCheckedItem($id);
     $data['title'] = 'Detail Order';
     $data['view_name'] = 'detailPackingIn';
     $data['notification'] = 'no';
     $this->load->view('template', $data);
-
   }
 
   public function checklistItem($id,$id_global_invoice)
@@ -40,7 +39,15 @@ class Packing extends CI_Controller{
     } else {
       redirect(base_url('detailPackingIn/'.$id_global_invoice));
     }
+  }
 
+  public function detailPackingOrder($id)
+  {
+    $data['list'] = $this->packing_model->getSomeData('id_global_invoice', $id, 'view_dc_order');
+    $data['title'] = 'Detail Order';
+    $data['view_name'] = 'detailPackingOrder';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
   }
 }
 

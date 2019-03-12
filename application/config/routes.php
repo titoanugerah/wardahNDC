@@ -36,6 +36,6 @@ $route['deleteOrder/(:any)'] = 'dc/deleteOrder/$1';
 $route['packingOrder'] = 'packing/packingOrder';
 $route['detailPackingIn/(:any)'] = 'packing/detailPackingIn/$1';
 $route['checklistItem/(:any)/(:any)'] = 'packing/checklistItem/$1/$2';
-
+$route['detailPackingOrder/(:any)'] = 'packing/detailPackingOrder/$1';
 #TESTING PURPOSE
 $route['test'] = 'welcome/test';

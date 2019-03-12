@@ -8,21 +8,21 @@
             <div class="nav-tabs-wrapper">
               <ul class="nav nav-tabs" data-tabs="tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#packingOrder" data-toggle="tab">
-                    <i class="material-icons">library_books</i>
+                  <a class="nav-link active" href="#allOrder" data-toggle="tab">
+                    <i class="material-icons">assignment</i>
                     Semua Pesanan
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#intoPacking" data-toggle="tab">
+                  <a class="nav-link" href="#processPacking" data-toggle="tab">
                     <i class="material-icons">departure_board</i>
-                    Menuju Ke Packing
+                    Sedang Diproses
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#processPacking" data-toggle="tab">
                     <i class="material-icons">error</i>
-                    Sedang Diproses
+                    Sudah Diproses
                   </a>
                 </li>
                 <li class="nav-item">
@@ -37,13 +37,13 @@
         </div>
         <div class="card-body ">
           <div class="tab-content text-justify">
-            <div class="tab-pane active" id="packingOrder">
+            <div class="tab-pane active" id="allOrder">
               <div class="card-body">
                 <table class="table">
                   <thead>
                     <tr>
                       <th class="text-center">#</th>
-                      <th class="text-center">Tanggal </th>
+                      <th class="text-center">Pemesan </th>
                       <th class="text-center">Status</th>
                     </tr>
                   </thead>
@@ -51,7 +51,7 @@
                     <?php $i = 1; foreach ($list as $item): ?>
                       <tr>
                         <td class="text-center"><?php echo $i ?></td>
-                        <td class="text-center"><?php echo ucwords($item->date); ?></td>
+                        <td class="text-center"><?php echo ucwords($item->fullname); ?></td>
                         <td class="text-center"><?php if ($item->status==0) {echo "Masa Order";} elseif($item->status==1){echo "Belum Diproses";}elseif($item->status==2){echo "Sudah Disetujui Admin";}elseif($item->status==3){echo "Diproses Bagian Stock";}elseif($item->status==4){echo "Pengiriman dari Stock ke Packaging";}elseif($item->status==5){echo "Diproses Packaging";}elseif($item->status==6){echo "Dikirim Ke masing masing DC";}elseif($item->status==7){echo "Pesanan Selesai";} ?></td>
                         <?php $i++; endforeach; ?>
                       </tr>
@@ -59,13 +59,13 @@
                   </table>
                 </div>
               </div>
-              <div class="tab-pane" id="intoPacking">
+              <div class="tab-pane" id="processPacking">
                 <div class="card-body">
                   <table class="table">
                     <thead>
                       <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Tanggal </th>
+                        <th class="text-center">Pemesan</th>
                         <th class="text-center">ID Global Invoice</th>
                         <th class="text-justify">Opsi</th>
                       </tr>
