@@ -32,7 +32,7 @@ class Warehouse_model extends CI_model{
       'qty_in' => $qty_in,
       'id_pic' => $this->session->userdata['id'],
       'information' => 'Barang masuk ke gudang ',
-      'batch' => 'XXXX'
+      'batch' => $this->input->post('batch')
      );
      $this->db->insert('update_stock', $data);
   }
