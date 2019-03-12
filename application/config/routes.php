@@ -32,5 +32,8 @@ $route['globalOrder'] = 'warehouse/globalOrder';
 $route['order'] = 'dc/order';
 $route['deleteOrder/(:any)'] = 'dc/deleteOrder/$1';
 
+#PACKING sqlite_create_aggregate
+$route['packingOrder'] = 'packing/packingOrder';
+
 #TESTING PURPOSE
 $route['test'] = 'welcome/test';

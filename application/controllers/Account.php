@@ -11,9 +11,9 @@ class Account extends CI_Controller{
   public function login()
   {
     $data['notification'] = 'no';
-    if ($this->input->post('loginValidation')){
+      if ($this->input->post('loginValidation')){
       $login = $this->account_model->loginValidation();
-      if($login['status']==1 && ($this->input->post('captcha')==$this->session->userdata('result'))){
+    if($login['status']==1 & ($this->input->post('captcha')==$this->session->userdata('result'))){
         $this->session->set_userdata($login['session']);
         redirect(base_url('dashboard'));
       } elseif($login['status']==1){
@@ -22,6 +22,7 @@ class Account extends CI_Controller{
         $data['notification'] = 'loginError';
       }
     }
+//    var_dump($this->session->userdata['result']);die;
     $captcha = $this->account_model->createCaptcha();
     $this->session->set_userdata($captcha);
     $this->load->view('login', $data);
