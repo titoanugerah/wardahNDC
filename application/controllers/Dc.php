@@ -52,7 +52,18 @@ class Dc extends CI_Controller{
     $data['view_name'] = 'detailOrderHistory';
     $data['notification'] = 'no';
     $this->load->view('template', $data);
+  }
 
+  public function confirmOrder($id, $id_order, $id_global_invoice)
+  {
+    $this->dc_model->confirmOrder($id);
+    $check = $this->dc_model->checkOrder($id_order);
+    if ($check==0) {
+      $this->dc_model->updateGlobalInvoices($id_global_invoice, 7);
+      redirect(base_url('orderHistory'));
+    } else {
+      redirect(base_url('detailOrder/'.$id_order));
+    }
   }
 }
 

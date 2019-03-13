@@ -146,6 +146,33 @@ class Dc_model extends CI_model{
       $this->db->insert('detail_order', $data);
     }
   }
+
+  public function confirmOrder($id)
+  {
+    $where = array('id' => $id );
+    $data = array('status' => 7 );
+    $this->db->where($where);
+    $this->db->update('detail_order', $data);
+  }
+
+  public function checkOrder($id_order)
+  {
+    $where = array(
+      'id_order' => $id_order,
+      'status' => 5
+     );
+     $query = $this->db->get_where('detail_order', $where);
+     return $query->num_rows();
+  }
+
+  public function updateGlobalInvoices($id, $value)
+  {
+    $where = array('id' => $id );
+    $data = array('status' => $value );
+    $this->db->where($where);
+    $this->db->update('global_invoice', $data);
+
+  }
 }
 
 ?>

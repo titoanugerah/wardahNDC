@@ -28,17 +28,24 @@
                       <th class="text-center">#</th>
                       <th class="text-center">Item</th>
                       <th class="text-center">Qty</th>
-                      <th class="text-center">Status</th>
+                      <th class="text-justify">Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $i = 1; foreach ($list as $item): ?>
+                    <?php $i = 1; foreach ($list as $item): if($item->status!=5){continue;} ?>
                       <tr>
                         <td class="text-center"><?php echo $i ?></td>
                         <td class="text-center"><?php echo ucwords($item->item); ?></td>
                         <td class="text-center"><?php echo $item->qty; ?></td>
-                        <td class="text-center"><?php if ($item->status==0) {echo "Masa Order";} elseif($item->status==1){echo "Belum Diproses";}elseif($item->status==2){echo "Sudah Disetujui Admin";}elseif($item->status==3){echo "Diproses Bagian Stock";}elseif($item->status==4){echo "Pengiriman dari Stock ke Packaging";}elseif($item->status==5){echo "Diproses Packaging";}elseif($item->status==6){echo "Dikirim Ke DC Tujuan";}elseif($item->status==7){echo "Pesanan Selesai";} ?></td>
-
+                        <td class="td-actions text-center">
+                          <center>
+                            <a href="<?php echo base_url('confirmOrder/'.$item->id.'/'.$item->id_order.'/'.$item->id_global_invoice); ?>">
+                              <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                                <i class="material-icons">done_all</i>
+                              </button>
+                            </a>
+                          </center>
+                        </td>
                         <?php $i++; endforeach; ?>
                       </tr>
                     </tbody>
