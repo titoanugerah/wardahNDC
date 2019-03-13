@@ -37,5 +37,7 @@ $route['packingOrder'] = 'packing/packingOrder';
 $route['detailPackingIn/(:any)'] = 'packing/detailPackingIn/$1';
 $route['checklistItem/(:any)/(:any)'] = 'packing/checklistItem/$1/$2';
 $route['detailPackingOrder/(:any)'] = 'packing/detailPackingOrder/$1';
+$route['processPacking/(:any)/(:any)'] = 'packing/processPacking/$1/$2';
+
 #TESTING PURPOSE
 $route['test'] = 'welcome/test';

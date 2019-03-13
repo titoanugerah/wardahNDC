@@ -49,6 +49,15 @@ class Packing extends CI_Controller{
     $data['notification'] = 'no';
     $this->load->view('template', $data);
   }
+
+  public function processPacking($id, $id_global_invoice)
+  {
+    $data['list'] = $this->packing_model->getSomeData('id_order', $id, 'view_detail_order');
+    $data['title'] = 'Detail Order';
+    $data['view_name'] = 'processPacking';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>
