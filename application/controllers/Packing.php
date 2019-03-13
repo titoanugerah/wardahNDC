@@ -10,7 +10,7 @@ class Packing extends CI_Controller{
     error_reporting(0);
     if (!$this->session->userdata['login']) {
       redirect(base_url('login'));
-    } elseif ($this->session->userdata['role']!='Pick') {
+    } elseif ($this->session->userdata['role']!='pick') {
       redirect(base_url('error/501'));
     }
   }
@@ -38,7 +38,6 @@ class Packing extends CI_Controller{
   {
     $this->packing_model->updateStatusItem($id, 3, 5);
     $list = $this->packing_model->getUncheckItem($id_global_invoice);
-//    var_dump($list);die;
     if ($list==0) {
       $this->packing_model->updateGlobalInvoice($id_global_invoice, 5);
       redirect(base_url('packingOrder'));
