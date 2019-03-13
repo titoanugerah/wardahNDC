@@ -7,6 +7,12 @@ class Packing extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('packing_model');
+    error_reporting(0);
+    if (!$this->session->userdata['login']) {
+      redirect(base_url('login'));
+    } elseif ($this->session->userdata['role']!='Pick') {
+      redirect(base_url('error/501'));
+    }
   }
 
   public function packingOrder()

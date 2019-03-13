@@ -7,6 +7,7 @@ class Warehouse Extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('warehouse_model');
+    error_reporting(0);
     if (!$this->session->userdata['login']) {
       redirect(base_url('login'));
     } elseif ($this->session->userdata['role']!='warehouse') {

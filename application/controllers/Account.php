@@ -6,6 +6,7 @@ class Account extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('account_model');
+    error_reporting(0);
   }
 
   public function login()
