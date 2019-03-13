@@ -23,8 +23,10 @@ class Dc_model extends CI_model{
   public function getSomeData($row, $id, $table)
   {
     $where = array($row => $id);
+//    var_dump(($this->db->query('select * from view_dc_order where id_dc = 6')->num_rows()));die;
     $query = $this->db->get_where($table, $where);
     return $query->result();
+
   }
 
   public function insertIDOrder($id)

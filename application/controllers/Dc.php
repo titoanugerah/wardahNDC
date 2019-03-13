@@ -42,6 +42,16 @@ class Dc extends CI_Controller{
     $data['notification'] = 'no';
     $this->load->view('template', $data);
   }
+
+  public function detailOrder($id)
+  {
+    $data['list'] = $this->dc_model->getSomeData('id_order', $id, 'view_detail_order');
+    $data['title'] = 'Detail Order';
+    $data['view_name'] = 'detailOrderHistory';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+
+  }
 }
 
  ?>
