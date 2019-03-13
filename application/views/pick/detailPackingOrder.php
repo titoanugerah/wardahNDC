@@ -22,13 +22,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#finishedPacking" data-toggle="tab">
                     <i class="material-icons">error</i>
-                    Sudah Diproses
+                    Sudah Diproses/Dikirim
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#sentPacking" data-toggle="tab">
                     <i class="material-icons">local_shipping</i>
-                    Terkirim
+                    Sampai Tujuan
                   </a>
                 </li>
               </ul>

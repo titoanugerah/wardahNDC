@@ -33,6 +33,15 @@ class Dc extends CI_Controller{
     $this->dc_model->deleteOrder($id);
     redirect(base_url('order'));
   }
+
+  public function orderHistory()
+  {
+    $data['list'] = $this->dc_model->getSomeData('id_dc', $this->session->userdata['id'], 'view_dc_order');
+    $data['title'] = 'Riwayat Order';
+    $data['view_name'] = 'orderHistory';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>
