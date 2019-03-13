@@ -30,7 +30,7 @@ class Packing extends CI_Controller{
 
   public function checklistItem($id,$id_global_invoice)
   {
-    $this->packing_model->updateStatusItem($id, 3, 4);
+    $this->packing_model->updateStatusItem($id, 3, 5);
     $list = $this->packing_model->getUncheckItem($id_global_invoice);
 //    var_dump($list);die;
     if ($list==0) {
@@ -58,6 +58,24 @@ class Packing extends CI_Controller{
     $data['notification'] = 'no';
     $this->load->view('template', $data);
   }
+
+  public function checklistPacking($id, $id_order, $id_global_invoice)
+  {
+    $this->packing_model->checklistPacking($id);
+    $uncheck = $this->packing_model->checkUncheckedItem($id_order);
+    if ($uncheck==0) {
+      $uncheck = $this->packing_model->checkUncheckedOrder($id_global_invoice);
+      if ($uncheck==0) {
+        $this->packing_model->updateGlobalInvoice($id_global_invoice, 6);
+        redirect(base_url('packingOrder'));
+      } else {
+        redirect(base_url('detailPackingOrder/'.$id_global_invoice));
+      }
+    } else {
+      redirect(base_url('processPacking/'.$id_order.'/'.$id_global_invoice));
+    }
+  }
+
 }
 
  ?>

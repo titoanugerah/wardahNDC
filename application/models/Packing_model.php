@@ -78,6 +78,34 @@ class Packing_model extends CI_Model{
     $this->db->where($where);
     $this->db->update('global_invoice', $data);
   }
+
+  public function checklistPacking($id)
+  {
+    $where = array('id' => $id);
+    $data = array('status' => 5);
+    $this->db->where($where);
+    $this->db->update('detail_order', $data);
+  }
+
+  public function checkUncheckedItem($id_order)
+  {
+    $where = array(
+      'id_order' => $id_order,
+      'status' => 4
+    );
+    $query = $this->db->get_where('detail_order', $where);
+    return $query->num_rows();
+  }
+
+  public function checkUncheckedOrder($id_global_invoice)
+  {
+    $where = array(
+      'id_global_invoice' => $id_global_invoice,
+      'status' => 4
+    );
+    $query = $this->db->get_where('view_detail_order', $where);
+    return $query->num_rows();
+  }
 }
 
  ?>

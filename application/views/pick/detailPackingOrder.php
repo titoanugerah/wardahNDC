@@ -121,6 +121,37 @@
                     </div>
                   </div>
 
+                  <div class="tab-pane" id="sentPacking">
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Pemesan </th>
+                            <th class="text-center">Opsi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $i = 1; foreach ($list as $item): if($item->status!=7){continue;} ?>
+                            <tr>
+                              <td class="text-center"><?php echo $i ?></td>
+                              <td class="text-center"><?php echo ucwords($item->fullname); ?></td>
+                              <td class="text-center">
+                                <center>
+                                  <a href="<?php echo base_url('processPacking/'.$item->id.'/'.$item->id_global_invoice); ?>">
+                                    <button type="button" rel="tooltip" class="btn btn-info">
+                                      <i class="material-icons">done_all</i>
+                                    </button>
+                                  </a>
+                                </center>
+                              </td>
+                              <?php $i++; endforeach; ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
             </div>
           </div>
         </div>
