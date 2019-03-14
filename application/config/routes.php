@@ -34,8 +34,9 @@ $route['deleteOrder/(:any)'] = 'dc/deleteOrder/$1';
 $route['orderHistory'] = 'dc/orderHistory';
 $route['detailOrder/(:any)'] = 'dc/detailOrder/$1';
 $route['confirmOrder/(:any)/(:any)/(:any)'] = 'dc/confirmOrder/$1/$2/$3';
+$route['itemRecap'] = 'dc/itemRecap';
 
-#PACKING sqlite_create_aggregate
+#PACKING AREA
 $route['packingOrder'] = 'packing/packingOrder';
 $route['detailPackingIn/(:any)'] = 'packing/detailPackingIn/$1';
 $route['checklistItem/(:any)/(:any)'] = 'packing/checklistItem/$1/$2';

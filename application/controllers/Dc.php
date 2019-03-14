@@ -65,6 +65,15 @@ class Dc extends CI_Controller{
       redirect(base_url('detailOrder/'.$id_order));
     }
   }
+
+  public function itemRecap()
+  {
+    $data['list'] = $this->dc_model->getAllData('view_item');
+    $data['title'] = 'Daftar Item';
+    $data['view_name'] = 'itemRecap';
+    $data['notification'] = 'no';
+    $this->load->view('template', $data);
+  }
 }
 
  ?>
