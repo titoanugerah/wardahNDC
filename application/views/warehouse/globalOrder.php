@@ -13,14 +13,12 @@
                     Pesanan
                   </a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="#handled" data-toggle="tab">
                     <i class="material-icons">assignment_turned_in</i>
-                    Pesanan Selesai Diproses
+                    Pesanan Sedang Diproses
                   </a>
-                </li>
-
+                </li>                
               </ul>
             </div>
           </div>
@@ -78,70 +76,69 @@
                     </table>
                   </div>
                 </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-  </div>
 
 
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form  method="post">
-      <div class="modal-content">
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <form  method="post">
+            <div class="modal-content">
 
-          <div class="modal-header">
-            <h5 class="modal-title" id="">Form Proses Order</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+              <div class="modal-header">
+                <h5 class="modal-title" id="">Form Proses Order</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
-          <div class="modal-body">
-            <p>Silahkan isi form dibawah Ini</p>
-            <br>
-            <div class="row">
-              <div class="col-md-12 pr-1">
-                <div class="form-group">
-                  <label>Nama Item</label>
-                  <select class="js-example-basic-single" name="id_item">
-                    <option value="#" disabled selected>Silahkan Pilih</option>
-                    <?php foreach ($order as $item): ?>
-                      <option value="<?php echo $item->id_item; ?>"><?php echo $item->item; ?></option>
-                    <?php endforeach; ?>
-                  </select>
+              <div class="modal-body">
+                <p>Silahkan isi form dibawah Ini</p>
+                <br>
+                <div class="row">
+                  <div class="col-md-12 pr-1">
+                    <div class="form-group">
+                      <label>Nama Item</label>
+                      <select class="js-example-basic-single" name="id_item">
+                        <option value="#" disabled selected>Silahkan Pilih</option>
+                        <?php foreach ($order as $item): ?>
+                          <option value="<?php echo $item->id_item; ?>"><?php echo $item->item; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+
+                  <div class="col-md-6 pr-1">
+                    <div class="form-group">
+                      <label>Jumlah Stok Keluar</label>
+                      <input type="number" name="qty_out" class="form-control" placeholder="Masukan stok keluar" value="" required>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 pl-1">
+                    <div class="form-group">
+                      <label>Batch</label>
+                      <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-            </div>
-            <br>
-            <div class="row">
 
-              <div class="col-md-6 pr-1">
-                <div class="form-group">
-                  <label>Jumlah Stok Keluar</label>
-                  <input type="number" name="qty_out" class="form-control" placeholder="Masukan stok keluar" value="" required>
-                </div>
-              </div>
-
-
-            <div class="col-md-6 pl-1">
-              <div class="form-group">
-                <label>Batch</label>
-                <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+              <div class="modal-footer modal-danger">
+                <button type="submit" class="btn btn-warning" name="itemOut" value="itemOut">Buat Nota</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
               </div>
             </div>
-
-          </div>
-          </div>
-
-          <div class="modal-footer modal-danger">
-            <button type="submit" class="btn btn-warning" name="itemOut" value="itemOut">Buat Nota</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+          </form>
         </div>
       </div>
-    </form>
-    </div>
-  </div>

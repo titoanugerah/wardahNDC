@@ -13,7 +13,6 @@
                     Item
                   </a>
                 </li>
-
               </ul>
             </div>
           </div>
@@ -59,57 +58,60 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="modal fade" id="createItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form  method="post">
-      <div class="modal-content">
-
+        <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="">Tambah Item</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-
           <div class="modal-body">
             <p>Silahkan isi form dibawah Ini</p>
-            <br>
             <div class="md-form">
               <div class="form-group">
                 <label>item</label>
                 <input type="text" name="item" class="form-control" placeholder="Masukan nama item" value="" required>
               </div>
-              <div class="form-group">
-                <label>Stok Awal</label>
-                <input type="number" name="stock" class="form-control" placeholder="Masukan stok awal" value="" required>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Stok Awal</label>
+                    <input type="number" name="stock" class="form-control" placeholder="Masukan stok awal" value="" required>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Batch</label>
+                    <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
           <div class="modal-footer modal-danger">
             <button type="submit" class="btn btn-warning" name="createItem" value="createItem">Buat Item</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
     </div>
   </div>
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form  method="post">
-      <div class="modal-content">
-
+        <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="">Update Item</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-
           <div class="modal-body">
             <p>Silahkan isi form dibawah Ini</p>
             <br>
@@ -126,32 +128,26 @@
                 </div>
               </div>
             </div>
-            <br>
             <div class="row">
-
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Jumlah Stok Masuk</label>
                   <input type="number" name="qty_in" class="form-control" placeholder="Masukan stok masuk" value="" required>
                 </div>
               </div>
-
-
-            <div class="col-md-6 pl-1">
-              <div class="form-group">
-                <label>Batch</label>
-                <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Batch</label>
+                  <input type="text" name="batch" class="form-control" placeholder="Masukan batch" value="" required>
+                </div>
               </div>
             </div>
-
           </div>
-          </div>
-
           <div class="modal-footer modal-danger">
             <button type="submit" class="btn btn-warning" name="updateItem" value="updateItem">Update Stok Item</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
     </div>
   </div>

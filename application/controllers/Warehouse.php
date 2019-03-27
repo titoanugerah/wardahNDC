@@ -51,6 +51,7 @@ class Warehouse Extends CI_Controller{
       $itemOut = $this->warehouse_model->createItemOut();
       $data['notification'] = 'globalOrderNotification'.$itemOut;
     }
+    $data['finish'] = $this->warehouse_model->getSomeData('status',3,'view_global_invoices');
     $data['order'] = $this->warehouse_model->getSomeData('status',2,'view_global_invoices');
     $data['handled'] = $this->warehouse_model->getAllData('view_difference_order');
     $data['title'] = 'Pesanan ';

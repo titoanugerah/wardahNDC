@@ -36,7 +36,7 @@ class Packing extends CI_Controller{
 
   public function checklistItem($id,$id_global_invoice)
   {
-    $this->packing_model->updateStatusItem($id, 3, 5);
+    $this->packing_model->updateStatusItem($id, 3, 4);
     $list = $this->packing_model->getUncheckItem($id_global_invoice);
     if ($list==0) {
       $this->packing_model->updateGlobalInvoice($id_global_invoice, 5);

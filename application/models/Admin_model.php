@@ -80,19 +80,18 @@ class Admin_model extends CI_model{
      );
 
      $this->db->insert('item', $data);
-     $this->updateStockItem($this->db->insert_id(), $this->input->post('stock'));
+     $this->updateStockItem($this->db->insert_id(), $this->input->post('stock'), $this->input->post('batch'));
   }
 
-  public function updateStockItem($id_item, $qty_in)
+  public function updateStockItem($id_item, $qty_in, $batch)
   {
     $data = array(
       'id_item' => $id_item,
       'qty_in' => $qty_in,
       'id_pic' => $this->session->userdata['id'],
       'information' => 'Barang masuk ke gudang ',
-      'batch' => 'XXXX'
+      'batch' => $batch
      );
-
      $this->db->insert('update_stock', $data);
   }
 

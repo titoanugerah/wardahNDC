@@ -101,7 +101,6 @@
 
           <div class="modal-body">
             <p>Silahkan isi form dibawah Ini</p>
-            <br>
             <div class="row">
               <div class="col-md-12 pr-1">
                 <div class="form-group">
@@ -115,10 +114,8 @@
                 </div>
               </div>
             </div>
-            <br>
             <div class="row">
-
-              <div class="col-md-6 pr-1">
+              <div class="col-md-12 pr-1">
                 <div class="form-group">
                   <label>Jumlah</label>
                   <input type="number" name="qty" class="form-control" placeholder="Masukan jumlah yang dibutuhkan" value="" required>

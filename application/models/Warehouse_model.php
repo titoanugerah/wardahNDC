@@ -55,6 +55,7 @@ class Warehouse_model extends CI_model{
   {
     $where = array('id' => $id);
     $data = array('item' => $this->input->post('item'));
+    $this->db->where($where);
     $this->db->update('item', $data);
   }
 
