@@ -117,6 +117,7 @@ class Admin extends CI_Controller{
     $data['notification'] = 'no';
     $data['recap'] = $this->warehouse_model->getSomeData('id_global_invoice', $id, 'view_global_order');
     $data['dc'] = $this->admin_model->getSomeData('id_global_invoice',$id, 'view_dc_order');
+    $data['detail'] = $this->admin_model->getDataRow($id, 'global_invoice' );
     $data['title'] = 'Pemesanan Barang';
     $data['view_name'] = 'detailRecapOrder';
     $this->load->view('template', $data);

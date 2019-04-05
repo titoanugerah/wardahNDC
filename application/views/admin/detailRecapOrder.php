@@ -81,7 +81,7 @@
                 <div class="tab-pane" id="option">
                   <div class="card-body">
                     <form  method="post">
-                      <button type="submit" name="agreeOrder" value="agreeOrder" class="btn btn-primary">Setujui Order</button>
+                      <button type="submit" name="agreeOrder" value="agreeOrder" class="btn btn-primary" <?php if($detail->status!=1){echo "hidden"; } ?>>Setujui Order</button>
                   </form>
                   </div>
                 </div>
